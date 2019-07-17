@@ -1,6 +1,6 @@
 # RN-AsyncStorage
 
-A quick trial of how using AsyncStorage on a React Native app.
+A quick trial of using AsyncStorage on a React Native app.
 
 ### Functionality
 
