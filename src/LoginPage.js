@@ -14,8 +14,6 @@ class LoginPage extends Component {
   onPressLogin = async () => {
     const { username, password } = this.state;
     try {
-      console.log('username', username);
-      console.log('password', password);
       await AsyncStorage.setItem('@username', username);
       await AsyncStorage.setItem('@password', password);
       this.props.onSuccessfulLogin();
@@ -28,18 +26,20 @@ class LoginPage extends Component {
   render() {
     return (
       <View style={styles.mainContainer}>
-        <Text>This is the login page</Text>
+        <Text style={styles.title}>This is the login page</Text>
         <Text>Username</Text>
         <TextInput
           style={styles.textInput}
           onChangeText={(username) => this.setState({username})}
           value={this.state.username}
+          autoCorrect={false}
         />
         <Text>Password</Text>
         <TextInput
           style={styles.textInput}
           onChangeText={(password) => this.setState({password})}
           value={this.state.password}
+          autoCorrect={false}
         />
 
         <Button
@@ -59,6 +59,11 @@ const styles = StyleSheet.create({
   },
   textInput: {
     height: 40, borderColor: 'gray', borderWidth: 1,
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: '600',
+    marginVertical: 10,
   }
 });
 

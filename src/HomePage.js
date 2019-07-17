@@ -33,7 +33,7 @@ class HomePage extends Component {
     const { username, password } = this.state;
     return (
       <View style={styles.mainContainer}>
-        <Text>This is the home page</Text>
+        <Text style={styles.title}>This is the home page</Text>
         <Text>{`Your username is ${username}`}</Text>
         <Text>{`Your password is ${password}`}</Text>
         <Button
@@ -52,6 +52,11 @@ const styles = StyleSheet.create({
   },
   textInput: {
     height: 40, borderColor: 'gray', borderWidth: 1,
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: '600',
+    marginVertical: 10,
   }
 });
 
